@@ -15,17 +15,17 @@
             <br>
             <form th:action=@{/person/create} method="post" th:object="${person}">
                 <div class="mb-4">
-                    <input type="text" class="form-control" name="nombre" th:field="*{nombre}"id="exampleFormControlInput1" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nombre" th:field="*{nombre}"id="exampleFormControlInput1" placeholder="Nombre" required>
                 </div>
                 <div class="div1 row">
                 <div class="col-md-6 mb-4">
-                    <input type="text" class="form-control" name="apellidoPaterno" th:field="*{apellidoPaterno}" placeholder="Apelldio Paterno">
+                    <input type="text" class="form-control" name="apellidoPaterno" th:field="*{apellidoPaterno}" placeholder="Apelldio Paterno" required>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <input type="text" class="form-control" name="apellidoMaterno" th:field="*{apellidoMaterno}" placeholder="Apellido Materno">
+                    <input type="text" class="form-control" name="apellidoMaterno" th:field="*{apellidoMaterno}" placeholder="Apellido Materno" required>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <input type="text" class="form-control" name="email" th:field="*{email}" placeholder="Email">
+                    <input type="text" class="form-control" name="email" th:field="*{email}" placeholder="Email" required>
                 </div>
                 <div class="col-md-6 mb-4">
                     <input type="text" class="form-control" name="telefonoMovil" th:field="*{telefonoMovil}" placeholder="Teléfono">
