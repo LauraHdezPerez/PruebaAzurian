@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../tool/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/app/app.css">
+
+	<title></title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light justify-content-end">
+         
+			  <form class="buscar d-flex" th:action="@{/person/fnd}" th:method="get" th:object="${person}">
+		  <input class="form-control me-2" type="search" name="id" th:field="*{id}" placeholder="Buscar" aria-label="Buscar">
+		  <button class="btn btn-outline-dark" type="submit">Search</button>
+	  </form>
+   
+</nav>
+	
+	
+	
+<div class="container">
+		<h1>Información</h1>
+		<a class="btn btn-outline-dark my-1" aria-current="page" th:href="@{/person/add}">Ingresar</a>
+		<br>
+		<div class="table-responsive">
+  		<table class="table table-sm table-hover" id="tabla">
+			<thead>
+				<tr class="table-dark">
+					<th scope="col">ID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido paterno</th>
+					<th scope="col">Apellido materno</th>
+					<th scope="col">Email</th>
+					<th scope="col">Teléfono Móvil</th>
+					<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each=" person: ${persons}">
+					<td th:text="${person.id}"></td>
+					<td th:text="${person.nombre}"></td>
+					<td th:text="${person.apellidoPaterno}"></td>
+					<td th:text="${person.apellidoMaterno}"></td>
+					<td th:text="${person.email}"></td>
+					<td th:text="${person.telefonoMovil}"></td>
+					<td>
+						<a class="d-inline" th:href="@{'/person/upd/' + ${person.id}}">
+							<img src="img/actualizar.png">
+						</a>
+						<a class="d-inline" th:href="@{'/person/del/' + ${person.id}}">
+						<img src="img/eliminar.png">
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+
+</body>
+</html>

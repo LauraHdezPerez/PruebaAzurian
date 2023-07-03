@@ -19,6 +19,9 @@ public class Person implements Serializable{
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
+	private String email;
+	private String telefonoMovil;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -43,6 +46,20 @@ public class Person implements Serializable{
 	public void setApellidoMaterno(String apellidoMaterno) {
 		this.apellidoMaterno = apellidoMaterno;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTelefonoMovil() {
+		return telefonoMovil;
+	}
+	public void setTelefonoMovil(String telefonoMovil) {
+		this.telefonoMovil = telefonoMovil;
+	}
+	
+	
 	
 	
 }

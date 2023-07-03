@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/tool/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/css/upd/upd.css">
+	<title></title>
+</head>
+ <body class="d-flex justify-content-center align-items-center vh-100">
+	 
+	 <div class="contenedor p-5 rounded-2">
+		<div class=" mb-1 text-center fs-1 fw-bold">
+			<h1>Actualizar</h1>
+		</div>
+        <br>
+	 	<form th:action="@{/person/save}" th:method="post" th:object="${person}">
+		 <div class="mb-3">
+			 <input type="hidden" th:field="*{id}"/>
+			 <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+			 <input type="text" class="form-control" name="nombre" th:field="*{nombre}" >
+		 </div>
+		 <div class="div1 row">
+			 <div class="col-md-6 mb-3">
+  			 <label for="exampleFormControlTextarea1" class="form-label">Apellido Paterno</label>
+  			 <input type="text" class="form-control" name="apellidoPaterno" th:field="*{apellidoPaterno}" >
+  		 </div>
+		<div class="col-md-6 mb-3">
+	 		 <label for="exampleFormControlTextarea1" class="form-label">Apellido Materno</label>
+ 		 	 <input type="text" class="form-control" name="apellidoMaterno" th:field="*{apellidoMaterno}" >
+		</div>
+		<div class="col-md-6 mb-3">
+	 		 <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+ 		 	 <input type="text" class="form-control" name="email" th:field="*{email}" >
+		</div>
+		<div class="col-md-6 mb-3">
+	 		 <label for="exampleFormControlTextarea1" class="form-label">Teléfono</label>
+ 		 	 <input type="text" class="form-control" name="telefonoMovil" th:field="*{telefonoMovil}" >
+		</div>
+		 </div>
+		 
+		<div class="boton">
+			<button class="btn btn-dark" type="submit">Actualizar</button>
+		</div>
+	  </form>
+	 </div>
+</body>
+</html>
